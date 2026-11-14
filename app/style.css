@@ -9,7 +9,10 @@ h1 { margin: 0; font-size: 22px; }
 .row.sev2 .sev { color: #a15c00; }
 .row time { color: #555; font-variant-numeric: tabular-nums; }
 footer { color: #777; font-size: 13px; }
-.row { grid-template-columns: 90px 50px 1fr 240px 110px; }
+.row { grid-template-columns: 90px 50px 1fr 200px 120px; cursor: pointer; }
+.row:hover { background: #f4f6fb; }
+.row:focus-visible { outline: 2px solid #2357d6; outline-offset: -2px; }
+.row.is-open { box-shadow: inset 4px 0 0 #2357d6; background: #eef2fc; }
 .row .act { text-align: right; }
 .row button { font: inherit; padding: 4px 14px; border: 1px solid #1d1d1f; border-radius: 6px; background: #fff; cursor: pointer; }
 .row button:hover { background: #1d1d1f; color: #fff; }
@@ -22,3 +25,22 @@ footer { color: #777; font-size: 13px; }
 .empty { padding: 24px 12px; color: #555; }
 .status { margin: 0 0 8px; padding: 8px 12px; background: #fff4e5; color: #8a4b00; border-radius: 6px; }
 footer code { font-family: ui-monospace, monospace; }
+
+/* Incident panel: fixed beside the list, so opening it never moves a row. */
+.panel { position: fixed; top: 90px; right: 16px; width: 260px; padding: 16px; background: #fff; border: 1px solid #ddd; border-radius: 10px; box-shadow: 0 6px 24px rgba(0,0,0,.08); }
+.panel p { margin: 0 0 8px; }
+.p-head { font: 600 18px ui-monospace, monospace; }
+.p-sev.sev1 { color: #b00020; } .p-sev.sev2 { color: #a15c00; }
+.p-what, .p-opened { color: #555; }
+.p-summary { font-weight: 600; }
+.p-close { position: absolute; top: 6px; right: 8px; border: 0; background: none; font-size: 20px; cursor: pointer; color: #555; }
+.p-ack { width: 100%; margin-top: 8px; padding: 10px; font: 600 15px system-ui; border: 0; border-radius: 8px; background: #1d1d1f; color: #fff; cursor: pointer; }
+.p-ack:disabled { opacity: .5; cursor: progress; }
+.p-acked { color: #1b6e2a; font-weight: 600; }
+@media (max-width: 1260px) { .list { max-width: calc(100vw - 340px); } }
+@media (max-width: 760px) {
+  .list { max-width: none; }
+  .row { grid-template-columns: 80px 44px 1fr; padding: 8px 12px; }
+  .row time, .row .act { grid-column: 3; }
+  .panel { top: auto; bottom: 0; left: 0; right: 0; width: auto; border-radius: 12px 12px 0 0; }
+}
