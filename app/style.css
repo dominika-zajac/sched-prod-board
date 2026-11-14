@@ -1,0 +1,24 @@
+body { margin: 0; font: 15px/1.4 system-ui, sans-serif; color: #1d1d1f; background: #fafafa; }
+header, main, footer { padding: 12px 24px; }
+h1 { margin: 0; font-size: 22px; }
+.sub { margin: 2px 0 0; color: #666; }
+.list { list-style: none; margin: 0; padding: 0; max-width: 960px; }
+.row { display: grid; grid-template-columns: 90px 50px 1fr 200px auto; gap: 12px; align-items: center; min-height: 44px; padding: 0 12px; border-bottom: 1px solid #e5e5e5; background: #fff; }
+.row .id { font-family: ui-monospace, monospace; }
+.row.sev1 .sev { color: #b00020; font-weight: 600; }
+.row.sev2 .sev { color: #a15c00; }
+.row time { color: #555; font-variant-numeric: tabular-nums; }
+footer { color: #777; font-size: 13px; }
+.row { grid-template-columns: 90px 50px 1fr 240px 110px; }
+.row .act { text-align: right; }
+.row button { font: inherit; padding: 4px 14px; border: 1px solid #1d1d1f; border-radius: 6px; background: #fff; cursor: pointer; }
+.row button:hover { background: #1d1d1f; color: #fff; }
+.row button:disabled { opacity: .5; cursor: progress; }
+.row.is-acked { background: #f1f8f1; }
+.acked { color: #1b6e2a; font-weight: 600; white-space: nowrap; }
+.loader { display: flex; align-items: center; gap: 10px; padding: 24px 12px; color: #555; }
+.spinner { width: 16px; height: 16px; border: 2px solid #ccc; border-top-color: #1d1d1f; border-radius: 50%; animation: spin .8s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.empty { padding: 24px 12px; color: #555; }
+.status { margin: 0 0 8px; padding: 8px 12px; background: #fff4e5; color: #8a4b00; border-radius: 6px; }
+footer code { font-family: ui-monospace, monospace; }
